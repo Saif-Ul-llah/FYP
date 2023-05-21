@@ -1,0 +1,17 @@
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\bin\Debug\Doctor Appiont.exe
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\bin\Debug\Doctor Appiont.pdb
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\doc_ceare.Form4.resources
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor_Appiont.Properties.Resources.resources
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor Appiont.csproj.GenerateResource.cache
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor Appiont.csproj.CoreCompileInputs.cache
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor Appiont.exe
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor Appiont.pdb
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\doc_ceare.Form2.resources
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\doc_ceare.Form3.resources
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor_Appiont.FScreen.resources
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor Appiont.csprojAssemblyReference.cache
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\bin\Debug\Database1.mdf
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\bin\Debug\Database1_log.ldf
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\doc_ceare.UserFisrtScreen.resources
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\doc_ceare.UserHomeControl.resources
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor_Appiont.UserCat.resources
