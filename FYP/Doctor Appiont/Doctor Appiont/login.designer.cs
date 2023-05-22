@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GoBackToFirstSreen = new System.Windows.Forms.Button();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.GoBackToFirstSreen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // GoBackToFirstSreen
+            // 
+            this.GoBackToFirstSreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
+            this.GoBackToFirstSreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GoBackToFirstSreen.FlatAppearance.BorderSize = 0;
+            this.GoBackToFirstSreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoBackToFirstSreen.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold);
+            this.GoBackToFirstSreen.ForeColor = System.Drawing.Color.White;
+            this.GoBackToFirstSreen.Location = new System.Drawing.Point(27, 27);
+            this.GoBackToFirstSreen.Name = "GoBackToFirstSreen";
+            this.GoBackToFirstSreen.Size = new System.Drawing.Size(100, 25);
+            this.GoBackToFirstSreen.TabIndex = 64;
+            this.GoBackToFirstSreen.Text = "Go Back";
+            this.GoBackToFirstSreen.UseVisualStyleBackColor = false;
+            this.GoBackToFirstSreen.Click += new System.EventHandler(this.BackToFirstScreenToDrSignUp_Click);
             // 
             // textBox19
             // 
@@ -116,22 +132,6 @@
             this.label22.Size = new System.Drawing.Size(84, 30);
             this.label22.TabIndex = 6;
             this.label22.Text = "Sign In";
-            // 
-            // GoBackToFirstSreen
-            // 
-            this.GoBackToFirstSreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(93)))), ((int)(((byte)(173)))));
-            this.GoBackToFirstSreen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GoBackToFirstSreen.FlatAppearance.BorderSize = 0;
-            this.GoBackToFirstSreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GoBackToFirstSreen.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold);
-            this.GoBackToFirstSreen.ForeColor = System.Drawing.Color.White;
-            this.GoBackToFirstSreen.Location = new System.Drawing.Point(27, 27);
-            this.GoBackToFirstSreen.Name = "GoBackToFirstSreen";
-            this.GoBackToFirstSreen.Size = new System.Drawing.Size(100, 25);
-            this.GoBackToFirstSreen.TabIndex = 64;
-            this.GoBackToFirstSreen.Text = "Go Back";
-            this.GoBackToFirstSreen.UseVisualStyleBackColor = false;
-            this.GoBackToFirstSreen.Click += new System.EventHandler(this.BackToFirstScreenToDrSignUp_Click);
             // 
             // Form3
             // 

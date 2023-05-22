@@ -38,6 +38,9 @@ namespace Doctor_Appiont
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FScreen));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.signUpDropDown = new System.Windows.Forms.Panel();
             this.docSignUpGo = new System.Windows.Forms.Button();
@@ -46,6 +49,7 @@ namespace Doctor_Appiont
             this.firstPageSignUpBtn = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.signUpDropDown.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +57,7 @@ namespace Doctor_Appiont
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(172)))), ((int)(((byte)(175)))));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.signUpDropDown);
             this.panel1.Controls.Add(this.goToSignIn);
@@ -63,6 +68,45 @@ namespace Doctor_Appiont
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 42;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold);
+            this.panel2.Location = new System.Drawing.Point(411, 253);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(147, 69);
+            this.panel2.TabIndex = 24;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 31);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Doc Sign In";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.DoctorLogin_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(147, 31);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "User Sign In";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.UserLogin_Click);
             // 
             // pictureBox2
             // 
@@ -167,11 +211,16 @@ namespace Doctor_Appiont
             this.Load += new System.EventHandler(this.FScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.signUpDropDown.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
+
+        private Panel panel2;
+        private Button button1;
+        private Button button2;
     }
 }
 

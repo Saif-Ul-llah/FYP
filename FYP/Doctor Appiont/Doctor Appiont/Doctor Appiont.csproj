@@ -48,6 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -152,12 +153,12 @@
     <Content Include="Assets\log.png" />
     <Content Include="Assets\set.png" />
     <Content Include="Assets\pro.png" />
-    <Content Include="Database1.mdf">
+    <Content Include="Appoint.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database1_log.ldf">
+    <Content Include="Appoint_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
+      <DependentUpon>Appoint.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
