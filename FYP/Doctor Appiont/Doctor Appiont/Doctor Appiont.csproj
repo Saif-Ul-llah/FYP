@@ -59,17 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoctorFisrtScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorFisrtScreen.designer.cs">
+      <DependentUpon>DoctorFisrtScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoctorSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DoctorSignUp.designer.cs">
       <DependentUpon>DoctorSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="loginUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
+    <Compile Include="loginUsers.designer.cs">
+      <DependentUpon>loginUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserBookingWindowControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserBookingWindowControl1.designer.cs">
+      <DependentUpon>UserBookingWindowControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UserCat.cs">
       <SubType>UserControl</SubType>
@@ -103,11 +115,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DoctorFisrtScreen.resx">
+      <DependentUpon>DoctorFisrtScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctorSignUp.resx">
       <DependentUpon>DoctorSignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+    <EmbeddedResource Include="loginUsers.resx">
+      <DependentUpon>loginUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserBookingWindowControl1.resx">
+      <DependentUpon>UserBookingWindowControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserCat.resx">
       <DependentUpon>UserCat.cs</DependentUpon>
@@ -133,6 +151,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

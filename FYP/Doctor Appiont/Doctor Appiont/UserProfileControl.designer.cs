@@ -135,9 +135,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(185, 193);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 16);
+            this.label5.Size = new System.Drawing.Size(62, 16);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Address*";
+            this.label5.Text = "Email*";
             // 
             // label4
             // 

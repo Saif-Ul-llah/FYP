@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Web;
+
 using System.Windows.Forms;
 
 namespace Doctor_Appiont
@@ -57,16 +59,21 @@ namespace Doctor_Appiont
         //doctor login
         private void DoctorLogin_Click(object sender, EventArgs e)
         {
-            doc_ceare.Form3 login = new doc_ceare.Form3();
+            string type = "Doctors";
+            doc_ceare.Form3 login = new doc_ceare.Form3(type);
+  
             login.Show();
             this.Hide();
         }
         //user login 
         private void UserLogin_Click(object sender, EventArgs e)
         {
-            doc_ceare.Form3 login = new doc_ceare.Form3();
+            string type = "Users";
+            doc_ceare.Form3 login = new doc_ceare.Form3(type);
+  
             login.Show();
             this.Hide();
+            
         }
     }
 }

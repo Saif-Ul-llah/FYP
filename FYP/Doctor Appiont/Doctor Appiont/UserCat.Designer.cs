@@ -101,7 +101,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(105, 112);
             this.panel12.TabIndex = 5;
-            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint);
+            this.panel12.Click += new System.EventHandler(this.Pulmonology);
             // 
             // pictureBox12
             // 
@@ -134,7 +134,7 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(105, 112);
             this.panel11.TabIndex = 6;
-            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
+            this.panel11.Click += new System.EventHandler(this.Skin);
             // 
             // pictureBox11
             // 
@@ -167,7 +167,7 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(105, 112);
             this.panel10.TabIndex = 7;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            this.panel10.Click += new System.EventHandler(this.Oncology);
             // 
             // pictureBox10
             // 
@@ -200,7 +200,7 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(105, 112);
             this.panel9.TabIndex = 8;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
+            this.panel9.Click += new System.EventHandler(this.ENT);
             // 
             // pictureBox9
             // 
@@ -233,7 +233,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(105, 112);
             this.panel8.TabIndex = 9;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            this.panel8.Click += new System.EventHandler(this.Ophthalmology);
             // 
             // pictureBox7
             // 
@@ -266,7 +266,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(105, 112);
             this.panel7.TabIndex = 10;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            this.panel7.Click += new System.EventHandler(this.Orthopedic);
             // 
             // pictureBox8
             // 
@@ -299,7 +299,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(105, 112);
             this.panel6.TabIndex = 11;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            this.panel6.Click += new System.EventHandler(this.Psychiatrist);
             // 
             // pictureBox6
             // 
@@ -332,7 +332,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(105, 112);
             this.panel5.TabIndex = 12;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            this.panel5.Click += new System.EventHandler(this.Radiology);
             // 
             // pictureBox5
             // 
@@ -365,7 +365,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(105, 112);
             this.panel4.TabIndex = 13;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.panel4.Click += new System.EventHandler(this.Nephrology);
             // 
             // pictureBox4
             // 
@@ -398,7 +398,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(105, 112);
             this.panel3.TabIndex = 14;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel3.Click += new System.EventHandler(this.Neurology);
             // 
             // pictureBox3
             // 
@@ -431,7 +431,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(105, 112);
             this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.Click += new System.EventHandler(this.Cardiology);
             // 
             // label2
             // 
@@ -464,7 +464,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(105, 112);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Click += new System.EventHandler(this.dentist);
             // 
             // label1
             // 

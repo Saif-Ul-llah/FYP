@@ -134,7 +134,7 @@ namespace doc_ceare
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            UserHomeControl UserHomeControl = new UserHomeControl();
+           // UserHomeControl UserHomeControl = new UserHomeControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -211,7 +211,7 @@ namespace doc_ceare
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(172)))), ((int)(((byte)(175)))));
-          // this.panel2.Controls.Add(UserHomeControl);
+           // this.panel2.Controls.Add(UserHomeControl);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
