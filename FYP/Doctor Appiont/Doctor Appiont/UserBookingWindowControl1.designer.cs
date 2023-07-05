@@ -47,10 +47,11 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Lucida Fax", 14F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 307);
+            this.button1.Location = new System.Drawing.Point(0, 358);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 43);
+            this.button1.Size = new System.Drawing.Size(275, 43);
             this.button1.TabIndex = 0;
             this.button1.Text = "Booking";
             this.button1.UseVisualStyleBackColor = false;
@@ -58,82 +59,94 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(93, 225);
+            this.comboBox1.Location = new System.Drawing.Point(50, 147);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(147, 27);
             this.comboBox1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 228);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(88, 22);
             this.label1.TabIndex = 3;
             this.label1.Text = "Timings :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 133);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(125, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Get Dr. Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 133);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(68, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "Name :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 194);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(14, 238);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(62, 22);
             this.label4.TabIndex = 6;
             this.label4.Text = "Price :";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 107);
+            this.pictureBox1.Size = new System.Drawing.Size(275, 28);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(90, 194);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(46, 269);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 13);
+            this.label5.Size = new System.Drawing.Size(217, 23);
             this.label5.TabIndex = 8;
             this.label5.Text = "get appiontment chargers";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 165);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(14, 182);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.Size = new System.Drawing.Size(110, 22);
             this.label6.TabIndex = 9;
             this.label6.Text = "Experience :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(90, 165);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(47, 216);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 13);
+            this.label7.Size = new System.Drawing.Size(141, 23);
             this.label7.TabIndex = 10;
             this.label7.Text = "get Dr Experien";
             // 
@@ -153,7 +166,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Name = "UserBookingWindowControl1";
-            this.Size = new System.Drawing.Size(220, 350);
+            this.Size = new System.Drawing.Size(275, 401);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

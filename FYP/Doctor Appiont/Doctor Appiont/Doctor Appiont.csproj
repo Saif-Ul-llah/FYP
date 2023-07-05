@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocTimingWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocTimingWindow.designer.cs">
+      <DependentUpon>DocTimingWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoctorFisrtScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DocTimingWindow.resx">
+      <DependentUpon>DocTimingWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctorFisrtScreen.resx">
       <DependentUpon>DoctorFisrtScreen.cs</DependentUpon>
     </EmbeddedResource>

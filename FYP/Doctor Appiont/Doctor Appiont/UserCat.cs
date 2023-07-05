@@ -14,13 +14,15 @@ namespace Doctor_Appiont
     {
          private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\Appoint.mdf;Integrated Security = True"; // Replace with your actual connection string
          private SqlConnection connection;
-         FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
+        FlowLayoutPanel flowLayoutPanel;
         //private FlowLayoutPanel flowLayoutPanel;
         Panel mainPanel = new Panel();
+        private string userMail;
 
-        public UserCat()
+        public UserCat(string Email)
         {
             InitializeComponent();
+            userMail = Email;
             connection = new SqlConnection(connectionString);
         }
 
@@ -29,6 +31,10 @@ namespace Doctor_Appiont
           
             try
             {
+
+                //for change font size make obj
+                Font font = new Font("Times New Roman", 12);
+
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'dentist'";
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -37,7 +43,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-               
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -47,6 +53,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -54,16 +61,22 @@ namespace Doctor_Appiont
 
                 while (reader.Read())
                 {
+
+
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
+                    object  emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
 
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
                     bookingButton.FlatStyle = FlatStyle.Flat;
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
+
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -82,17 +95,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Location = new Point(10, 100);
+                    nameLabel.Font = font ;
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Location = new Point(10, 140);
+                    specializationLabel.Font = font;
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Location = new Point(10, 180);
+                    experienceLabel.Font = font;
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -139,7 +155,8 @@ namespace Doctor_Appiont
 
         private void Cardiology(object sender, EventArgs e)
         {
-
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'cardiologist'";
@@ -149,7 +166,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-                
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -160,6 +177,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -171,13 +189,16 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
 
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
                     bookingButton.FlatStyle = FlatStyle.Flat;
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -195,18 +216,21 @@ namespace Doctor_Appiont
                     labelPanel.Dock = DockStyle.Fill;
 
                     Label nameLabel = new Label();
+                    nameLabel.Font = font;
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -253,6 +277,8 @@ namespace Doctor_Appiont
 
         private void Neurology(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
 
             try
             {
@@ -263,7 +289,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-              
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -273,6 +299,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -283,13 +310,16 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
 
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -308,17 +338,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -365,6 +398,8 @@ namespace Doctor_Appiont
 
         private void Nephrology(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
 
             try
             {
@@ -375,7 +410,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-                
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -385,6 +420,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -395,13 +431,15 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -420,17 +458,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -477,6 +518,9 @@ namespace Doctor_Appiont
 
         private void Radiology(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
+
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'radiology'";
@@ -486,7 +530,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-              
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -496,6 +540,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -506,13 +551,15 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -531,17 +578,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -588,6 +638,9 @@ namespace Doctor_Appiont
 
         private void Psychiatrist(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
+
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'psychiatrists'";
@@ -597,7 +650,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-               
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -607,6 +660,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -617,13 +671,15 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -642,17 +698,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -699,6 +758,9 @@ namespace Doctor_Appiont
 
         private void Orthopedic(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
+
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'orthopedic'";
@@ -707,7 +769,7 @@ namespace Doctor_Appiont
                 SqlDataReader reader = command.ExecuteReader();
 
                 //   int panelSpacing = 30; // Extra spacing between panels
-
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -717,6 +779,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -727,13 +790,15 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -752,17 +817,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -809,6 +877,9 @@ namespace Doctor_Appiont
 
         private void Ophthalmology(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
+
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'ophthalmologist'";
@@ -818,7 +889,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-               
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -828,6 +899,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -838,11 +910,12 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
                     bookingButton.FlatStyle = FlatStyle.Flat;
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
                     bookingButton.ForeColor = Color.White;
@@ -863,16 +936,19 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
+                    experienceLabel.Font = font;
                     experienceLabel.Location = new Point(10, 260);
                     experienceLabel.AutoSize = true;
 
@@ -920,6 +996,9 @@ namespace Doctor_Appiont
 
         private void ENT(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
+
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'ENT'";
@@ -929,7 +1008,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-                
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -939,6 +1018,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -949,13 +1029,15 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -974,17 +1056,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -1031,6 +1116,9 @@ namespace Doctor_Appiont
 
         private void Oncology(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
+
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'oncology'";
@@ -1040,7 +1128,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-               
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -1050,6 +1138,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -1060,13 +1149,15 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -1085,17 +1176,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
+                    nameLabel.Font = font;
                     nameLabel.Location = new Point(10, 220);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -1142,6 +1236,9 @@ namespace Doctor_Appiont
 
         private void Skin(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
+
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'skin specilist'";
@@ -1151,7 +1248,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-               
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -1161,6 +1258,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -1171,13 +1269,15 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -1196,17 +1296,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -1253,6 +1356,8 @@ namespace Doctor_Appiont
 
         private void Pulmonology(object sender, EventArgs e)
         {
+            //for change font size make obj
+            Font font = new Font("Times New Roman", 12);
             try
             {
                 string query = "SELECT * FROM [dbo].[Doctors] WHERE [Specilization] = 'pulmonology'";
@@ -1262,7 +1367,7 @@ namespace Doctor_Appiont
 
                 //   int panelSpacing = 30; // Extra spacing between panels
 
-              
+                flowLayoutPanel = new FlowLayoutPanel();
                 flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
                 flowLayoutPanel.Dock = DockStyle.Top;
                 flowLayoutPanel.AutoSize = true;
@@ -1272,6 +1377,7 @@ namespace Doctor_Appiont
                 back.Click += new EventHandler(Back);
                 back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
                 back.Text = "Back";
+                back.Font = font;
                 back.Height = 30;
                 back.ForeColor = Color.White;
                 back.FlatStyle = FlatStyle.Flat;
@@ -1282,13 +1388,15 @@ namespace Doctor_Appiont
                     PictureBox docPicshow = new PictureBox();
                     docPicshow.Dock = DockStyle.Top;
                     // Load the image using docPicshow.Image = Image.FromFile(filePath);
-
+                    object emailString = reader["email_address"];
+                    string userEmail = emailString.ToString();
                     // int r = 46, g = 134, a = 193;
                     Button bookingButton = new Button();
-                    bookingButton.Click += new EventHandler(getBookingScreen);
+                    bookingButton.Click += (senderObject, eventArgs) => getBookingScreen(sender, e, userEmail, userMail);
                     bookingButton.FlatStyle = FlatStyle.Flat;
                     bookingButton.Dock = DockStyle.Bottom;
                     bookingButton.Text = "Booking";
+                    bookingButton.Font = font;
                     bookingButton.ForeColor = Color.White;
                     bookingButton.FlatAppearance.BorderSize = 0;
                     bookingButton.Height = 30;
@@ -1307,17 +1415,20 @@ namespace Doctor_Appiont
 
                     Label nameLabel = new Label();
                     nameLabel.Text = "Name: " + reader["first_name"] + " " + reader["last_name"];
-                    nameLabel.Location = new Point(10, 220);
+                    nameLabel.Font = font;
+                    nameLabel.Location = new Point(10, 100);
                     nameLabel.AutoSize = true;
 
                     Label specializationLabel = new Label();
                     specializationLabel.Text = "Specialization: " + reader["Specilization"];
-                    specializationLabel.Location = new Point(10, 240);
+                    specializationLabel.Font = font;
+                    specializationLabel.Location = new Point(10, 140);
                     specializationLabel.AutoSize = true;
 
                     Label experienceLabel = new Label();
                     experienceLabel.Text = "Experience: " + reader["Experience"];
-                    experienceLabel.Location = new Point(10, 260);
+                    experienceLabel.Font = font;
+                    experienceLabel.Location = new Point(10, 180);
                     experienceLabel.AutoSize = true;
 
                     labelPanel.Controls.Add(nameLabel);
@@ -1363,14 +1474,15 @@ namespace Doctor_Appiont
         }
 
         // booking screen show button
-        private void getBookingScreen(object sender, EventArgs e)
+        private void getBookingScreen(object sender, EventArgs e, string userEmail ,string userMail)
         {
 
-            Doctor_Appiont.UserBookingWindowControl1 bookingSrc = new Doctor_Appiont.UserBookingWindowControl1();
+            Doctor_Appiont.UserBookingWindowControl1 bookingSrc = new Doctor_Appiont.UserBookingWindowControl1(userEmail,userMail);
             Form bookingForm = new Form();
             bookingForm.StartPosition = FormStartPosition.CenterScreen;
-            bookingForm.Height = 375;
-            bookingForm.Width = 225;
+            bookingForm.Height = 444;
+            bookingForm.Width = 275;
+        // Console.WriteLine("User Email: " + userEmail);
             bookingForm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             bookingForm.Controls.Add(bookingSrc);
             bookingForm.ShowDialog();
@@ -1380,8 +1492,7 @@ namespace Doctor_Appiont
         // back button to categeries
         private void Back(object sender,EventArgs e)
         {
-            //flowLayoutPanel.Controls.Remove(mainPanel);
-            this.Controls.Remove(flowLayoutPanel);
+           
             //this.Destroy(flowLayoutPanel);
             
             // Check if the panel exists in the FlowLayoutPanel
@@ -1390,6 +1501,8 @@ namespace Doctor_Appiont
                 // Remove the panel from the FlowLayoutPanel
                 flowLayoutPanel.Controls.Remove(mainPanel);
             }
+            //flowLayoutPanel.Controls.Remove(mainPanel);
+            this.Controls.Remove(flowLayoutPanel);
 
             this.Controls.Add(panel1);
             this.Controls.Add(panel2);

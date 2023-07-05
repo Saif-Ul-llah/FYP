@@ -32,55 +32,55 @@
             this.label1 = new System.Windows.Forms.Label();
             this.GoBackToFirstSreen = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.exp = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.pas = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.cpas = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.firstname = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.phone = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.address = new System.Windows.Forms.TextBox();
+            this.lastname = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.speic = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(172)))), ((int)(((byte)(175)))));
+            this.panel1.Controls.Add(this.speic);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.GoBackToFirstSreen);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox17);
+            this.panel1.Controls.Add(this.exp);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.textBox9);
+            this.panel1.Controls.Add(this.pas);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.textBox10);
+            this.panel1.Controls.Add(this.cpas);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.textBox11);
+            this.panel1.Controls.Add(this.firstname);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.textBox12);
-            this.panel1.Controls.Add(this.textBox13);
-            this.panel1.Controls.Add(this.textBox14);
-            this.panel1.Controls.Add(this.textBox15);
-            this.panel1.Controls.Add(this.textBox16);
+            this.panel1.Controls.Add(this.phone);
+            this.panel1.Controls.Add(this.email);
+            this.panel1.Controls.Add(this.address);
+            this.panel1.Controls.Add(this.lastname);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -133,12 +133,12 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox17
+            // exp
             // 
-            this.textBox17.Location = new System.Drawing.Point(611, 240);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(150, 20);
-            this.textBox17.TabIndex = 61;
+            this.exp.Location = new System.Drawing.Point(611, 240);
+            this.exp.Name = "exp";
+            this.exp.Size = new System.Drawing.Size(150, 20);
+            this.exp.TabIndex = 61;
             // 
             // label21
             // 
@@ -200,12 +200,12 @@
             this.label14.TabIndex = 43;
             this.label14.Text = "Last Name :";
             // 
-            // textBox9
+            // pas
             // 
-            this.textBox9.Location = new System.Drawing.Point(240, 274);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(150, 20);
-            this.textBox9.TabIndex = 57;
+            this.pas.Location = new System.Drawing.Point(240, 274);
+            this.pas.Name = "pas";
+            this.pas.Size = new System.Drawing.Size(150, 20);
+            this.pas.TabIndex = 57;
             // 
             // label15
             // 
@@ -218,12 +218,12 @@
             this.label15.TabIndex = 44;
             this.label15.Text = "Email :";
             // 
-            // textBox10
+            // cpas
             // 
-            this.textBox10.Location = new System.Drawing.Point(611, 278);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(150, 20);
-            this.textBox10.TabIndex = 56;
+            this.cpas.Location = new System.Drawing.Point(611, 278);
+            this.cpas.Name = "cpas";
+            this.cpas.Size = new System.Drawing.Size(150, 20);
+            this.cpas.TabIndex = 56;
             // 
             // label16
             // 
@@ -247,12 +247,12 @@
             this.label17.TabIndex = 55;
             this.label17.Text = "Comfirm Password  :";
             // 
-            // textBox11
+            // firstname
             // 
-            this.textBox11.Location = new System.Drawing.Point(240, 129);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(150, 20);
-            this.textBox11.TabIndex = 46;
+            this.firstname.Location = new System.Drawing.Point(240, 129);
+            this.firstname.Name = "firstname";
+            this.firstname.Size = new System.Drawing.Size(150, 20);
+            this.firstname.TabIndex = 46;
             // 
             // label18
             // 
@@ -265,40 +265,33 @@
             this.label18.TabIndex = 54;
             this.label18.Text = "Password :";
             // 
-            // textBox12
+            // phone
             // 
-            this.textBox12.Location = new System.Drawing.Point(611, 166);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(150, 20);
-            this.textBox12.TabIndex = 47;
+            this.phone.Location = new System.Drawing.Point(611, 166);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(150, 20);
+            this.phone.TabIndex = 47;
             // 
-            // textBox13
+            // email
             // 
-            this.textBox13.Location = new System.Drawing.Point(239, 204);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(150, 20);
-            this.textBox13.TabIndex = 53;
+            this.email.Location = new System.Drawing.Point(240, 166);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(150, 20);
+            this.email.TabIndex = 48;
             // 
-            // textBox14
+            // address
             // 
-            this.textBox14.Location = new System.Drawing.Point(240, 166);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(150, 20);
-            this.textBox14.TabIndex = 48;
+            this.address.Location = new System.Drawing.Point(611, 204);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(150, 20);
+            this.address.TabIndex = 52;
             // 
-            // textBox15
+            // lastname
             // 
-            this.textBox15.Location = new System.Drawing.Point(611, 204);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(150, 20);
-            this.textBox15.TabIndex = 52;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(611, 130);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(150, 20);
-            this.textBox16.TabIndex = 49;
+            this.lastname.Location = new System.Drawing.Point(611, 129);
+            this.lastname.Name = "lastname";
+            this.lastname.Size = new System.Drawing.Size(150, 20);
+            this.lastname.TabIndex = 49;
             // 
             // label19
             // 
@@ -326,6 +319,27 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // speic
+            // 
+            this.speic.FormattingEnabled = true;
+            this.speic.Items.AddRange(new object[] {
+            "nephrology",
+            "neurologist",
+            "dentist",
+            "cardiologist",
+            "radiology",
+            "psychiatrists",
+            "ENT",
+            "oncology",
+            "skin specilist",
+            "orthopedic",
+            "ophthalmologist",
+            "pulmonology"});
+            this.speic.Location = new System.Drawing.Point(240, 204);
+            this.speic.Name = "speic";
+            this.speic.Size = new System.Drawing.Size(150, 21);
+            this.speic.TabIndex = 66;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,24 +358,23 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox exp;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox pas;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox cpas;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox firstname;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox phone;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox address;
+        private System.Windows.Forms.TextBox lastname;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -369,5 +382,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button GoBackToFirstSreen;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox speic;
     }
 }

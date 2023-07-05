@@ -134,7 +134,7 @@ namespace doc_ceare
             this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             // UserDoctorListControl UserHomeControl = new UserDoctorListControl();
-            //UserHomeControl deat = new UserHomeControl();
+            //UserHomeControl deat = new UserHomeControl(Email,tb);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -205,7 +205,7 @@ namespace doc_ceare
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(172)))), ((int)(((byte)(175)))));
-           // this.panel2.Controls.Add(deat);
+           //this.panel2.Controls.Add(deat);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
@@ -235,7 +235,7 @@ namespace doc_ceare
             this.label1.Height = 40;
             this.label1.Font = new Font("Lucida Fax", 12, FontStyle.Bold);
             this.label1.ForeColor = Color.FromArgb(33, 93, 172);
-            this.label1.Text = "doctorScr\nDOCTOR";
+            this.label1.Text = "ASAAN\nDOCTOR";
 
 
             // this.label1.Font = new Font(label1.Font.FontFamily, label1.Font.Size * 1.5f, label1.Font.Style, label1.Font.Unit, label1.Font.GdiCharSet, label1.Font.GdiVerticalFont);

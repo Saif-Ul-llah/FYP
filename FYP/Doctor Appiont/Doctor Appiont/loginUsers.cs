@@ -15,8 +15,8 @@ namespace doc_ceare
     public partial class Form3 : Form
     {
         private string tb;
-       
-     
+        private bool isPasswordVisible = false;
+
         public Form3(string type)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -39,8 +39,8 @@ namespace doc_ceare
             string email = textBox18.Text.Trim();
             string password = textBox19.Text.Trim();
 
-              UserFisrtScreen user = new UserFisrtScreen(email);
-              DoctorFisrtScreen doctor = new DoctorFisrtScreen(email);
+              UserFisrtScreen user = new UserFisrtScreen(email ,tb);
+              DoctorFisrtScreen doctor = new DoctorFisrtScreen(email, tb);
 
         // Establish database connection
         string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\as comp\\OneDrive\\Documents\\Visual Studio 2017\\Projects\\Doctor Appiont\\Doctor Appiont\\Appoint.mdf\";Integrated Security=True";
@@ -86,6 +86,26 @@ namespace doc_ceare
 
               
             }
+        }
+
+        private void TogglePasswordVisibility()
+        {
+            if (isPasswordVisible)
+            {
+                textBox19.PasswordChar = '*'; // Set password character for hiding password
+                isPasswordVisible = false;
+            }
+            else
+            {
+                textBox19.PasswordChar = '\0'; // Set no password character for visible password
+                isPasswordVisible = true;
+            }
+        }
+
+        
+        private void TogglePasswordVisibility(object sender, EventArgs e)
+        {
+            TogglePasswordVisibility();
         }
     }
 }

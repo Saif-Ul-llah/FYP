@@ -6,7 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+     
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -36,12 +36,14 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(172)))), ((int)(((byte)(175)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.GoBackToFirstSreen);
             this.panel1.Controls.Add(this.textBox19);
             this.panel1.Controls.Add(this.textBox18);
@@ -73,16 +75,19 @@
             // 
             // textBox19
             // 
+            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox19.Location = new System.Drawing.Point(347, 193);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(164, 20);
+            this.textBox19.Size = new System.Drawing.Size(164, 24);
             this.textBox19.TabIndex = 11;
+            this.textBox19.PasswordChar = '*';
             // 
             // textBox18
             // 
+            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox18.Location = new System.Drawing.Point(347, 155);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(164, 20);
+            this.textBox18.Size = new System.Drawing.Size(164, 24);
             this.textBox18.TabIndex = 10;
             // 
             // button3
@@ -133,6 +138,21 @@
             this.label22.TabIndex = 6;
             this.label22.Text = "Sign In";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(517, 193);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 24);
+            this.button1.TabIndex = 65;
+            this.button1.Text = "#";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.TogglePasswordVisibility);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,5 +178,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button GoBackToFirstSreen;
+        private System.Windows.Forms.Button button1;
     }
 }

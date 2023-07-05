@@ -16,37 +16,49 @@ namespace doc_ceare
         
         
         Doctor_Appiont.FScreen log = new Doctor_Appiont.FScreen();
-        //UserDoctorListControl UserHomeControl = new UserDoctorListControl();
-        //Doctor_Appiont.UserCat userCat = new Doctor_Appiont.UserCat();
-        public DoctorFisrtScreen(String email)
+        private UserHomeControl UserHomeControl;
+        private doc_ceare.DocTimingWindow Schedule;
+        private String Email;
+        private String Tb;
+
+        public DoctorFisrtScreen(String email, String tb)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
-            InitializeComponent();       
-            //panel2.Controls.Add(UserHomeControl);
+            InitializeComponent();
+
+            Tb = tb;
+            Email = email;
+
+            UserHomeControl = new UserHomeControl(Email, tb);
+            panel2.Controls.Add(UserHomeControl);
         }
 
         //this button is for Profile
         private void Button1_Click(object sender, EventArgs e)
         {
-           
+
+            this.panel2.Controls.Remove(Schedule);
+            UserHomeControl = new UserHomeControl(Email, Tb);
+            this.panel2.Controls.Add(UserHomeControl);
+            
         }
 
-        //this button is for Categories
+        //this button is for Appointment Schedul for Doctor
         private void Button2_Click(object sender, EventArgs e)
         {
-            //this.panel2.Controls.Remove(UserHomeControl);
-            //panel2.Controls.Add(userCat);
+            this.panel2.Controls.Remove(UserHomeControl);
+            Schedule = new doc_ceare.DocTimingWindow(Email);
+            this.panel2.Controls.Add(Schedule);
         }
         
-        //this is for My Booking
-        private void Button4_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         
         //thid is for Setting
         private void Button5_Click(object sender, EventArgs e)
         {
+            this.panel2.Controls.Remove(Schedule);
+            UserHomeControl = new UserHomeControl(Email, Tb);
+            this.panel2.Controls.Add(UserHomeControl);
 
         }
 

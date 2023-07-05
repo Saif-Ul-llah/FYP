@@ -65,6 +65,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel11.SuspendLayout();
@@ -127,6 +128,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(92)))), ((int)(((byte)(173)))));
+            this.panel11.Controls.Add(this.label13);
             this.panel11.Controls.Add(this.pictureBox11);
             this.panel11.Controls.Add(this.label11);
             this.panel11.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -487,6 +489,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(-155, -147);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 18);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Dentist";
+            // 
             // UserCat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,5 +597,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label13;
     }
 }

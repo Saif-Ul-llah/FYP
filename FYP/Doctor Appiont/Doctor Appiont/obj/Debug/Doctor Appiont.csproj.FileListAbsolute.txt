@@ -17,3 +17,5 @@ C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\D
 C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\doc_ceare.DoctorFisrtScreen.resources
 C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\doc_ceare.UserHomeControl.resources
 C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor_Appiont.UserBookingWindowControl1.resources
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\Doctor Appiont.csprojAssemblyReference.cache
+C:\Users\as comp\OneDrive\Documents\Visual Studio 2017\Projects\Doctor Appiont\Doctor Appiont\obj\Debug\doc_ceare.DocTimingWindow.resources

@@ -140,7 +140,8 @@ namespace doc_ceare
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // ...
-         
+
+
 
 
             // button1 - Profile
